@@ -1,15 +1,16 @@
 #
-# Cookbook Name:: mysql
+# Cookbook Name:: nginx
 # Recipe:: default
 #
 # Copyright 2015, YOUR_COMPANY_NAME
 #
 # All rights reserved - Do Not Redistribute
 #
-package "mysql-server" do
+
+package "nginx" do
   action :install
 end
 
-service "mysqld" do
-  action [ :enable, :start ]
+service "nginx" do
+  action [:enable, :start]
 end
