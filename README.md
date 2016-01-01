@@ -8,3 +8,9 @@ bundle exec knife solo chef-test
 
 ## production
 berks vendor cookbooks --except development
+
+
+## serverspec learning
+初期設定
+serverspec-init
+linux / ssh / no vagrant / chef-test
