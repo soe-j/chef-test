@@ -15,5 +15,9 @@
     "instance_type": "t2.nano",
     "ssh_username": "ec2-user",
     "ami_name": "soeda-packer-example {{timestamp}}"
+  }],
+  "provisioners": [{
+    "type": "chef-solo",
+    "run_list": "nodes/opscode-test.json"
   }]
 }
