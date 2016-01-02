@@ -17,9 +17,11 @@
     "ssh_pty": true,
     "ami_name": "soeda-packer-example {{timestamp}}"
   }],
-  "provisioners": [{
-    "type": "chef-solo",
-    "cookbook_paths": ["cookbooks", "site-cookbooks"],
-    "run_list": ["nginx"]
-  }]
+  "provisioners": [
+    {
+      "type": "chef-solo",
+      "cookbook_paths": ["cookbooks", "site-cookbooks"],
+      "run_list": ["nginx"]
+    }
+  ]
 }
