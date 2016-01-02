@@ -14,6 +14,7 @@
     "source_ami": "ami-60b6c60a",
     "instance_type": "t2.nano",
     "ssh_username": "ec2-user",
+    "ssh_pty": true,
     "ami_name": "soeda-packer-example {{timestamp}}"
   }],
   "provisioners": [{
