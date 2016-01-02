@@ -19,6 +19,7 @@
   }],
   "provisioners": [{
     "type": "chef-solo",
-    "run_list": "nodes/opscode-test.json"
+    "cookbook_paths": ["cookbooks", "site-cookbooks"],
+    "run_list": ["yum-epel", "nginx"]
   }]
 }
