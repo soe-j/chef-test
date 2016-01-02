@@ -1,0 +1,8 @@
+require 'rake'
+require 'rspec/core/rake_task'
+
+namespace :spec do
+  RSpec::Core::RakeTask.new(:localhost) do |t|
+    t.pattern = "spec/localhost/*_spec.rb"
+  end
+end

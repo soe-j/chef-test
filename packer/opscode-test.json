@@ -22,6 +22,20 @@
       "type": "chef-solo",
       "cookbook_paths": ["cookbooks", "site-cookbooks"],
       "run_list": ["nginx"]
+    },
+    {
+      "type": "file",
+      "source": "packer/serverspec",
+      "destination": "/tmp"
+    },
+    {
+      "type": "file",
+      "source": "spec/opscode-test/",
+      "destination": "/tmp/serverspec/spec/localhost"
+    },
+    {
+      "type": "shell",
+      "script": "packer/serverspec.sh"
     }
   ]
 }
