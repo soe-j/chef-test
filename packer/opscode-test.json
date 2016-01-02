@@ -1,0 +1,27 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": ""
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "region": "us-east-1",
+    "vpc_id": "vpc-edd1bf89",
+    "subnet_id": "subnet-b43cd19e",
+    "associate_public_ip_address": true,
+    "source_ami": "ami-60b6c60a",
+    "instance_type": "t2.nano",
+    "ssh_username": "ec2-user",
+    "ssh_pty": true,
+    "ami_name": "soeda-packer-example {{timestamp}}"
+  }],
+  "provisioners": [
+    {
+      "type": "chef-solo",
+      "cookbook_paths": ["cookbooks", "site-cookbooks"],
+      "run_list": ["nginx"]
+    }
+  ]
+}

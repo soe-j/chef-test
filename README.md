@@ -1,16 +1,52 @@
-# Chef practice
+# opscode practice
 
+## develop
+~~~
 vagrant up
 vagrant ssh-config --host opscode-test >> ~/.ssh/config
+~~~
 
+### chef
+#### initial setting
+~~~
 bundle install
-bundle exec knife solo opscode-test
+bundle exec berks vendor cookbooks
+~~~
 
-## production
-berks vendor cookbooks --except development
+~~~
+bundle exec knife solo bootstrap opscode-test
+~~~
 
-
-## serverspec learning
-初期設定
+### serverspec
+#### initial setting
+~~~
+bundle install
 serverspec-init
 linux / ssh / no vagrant / opscode-test
+~~~
+
+~~~
+bundle exec rake spec:opscode-test
+~~~
+
+### packer
+#### initial setting
+~~~
+brew install packer
+packer  //<- check
+~~~
+
+~~~
+packer validate packer/opscode-test.json
+packer build \
+-var 'aws_access_key=********************' \
+-var 'aws_secret_key=****************************************' \
+packer/opscode-test.json
+~~~
+
+## production
+~~~
+(chefdk install)
+berks vendor cookbooks --except development
+...coming soon...
+~~~
