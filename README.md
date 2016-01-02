@@ -21,7 +21,7 @@ bundle exec knife solo bootstrap opscode-test
 #### initial setting
 ~~~
 bundle install
-serverspec-init
+bundle exec serverspec-init
 linux / ssh / no vagrant / opscode-test
 ~~~
 
