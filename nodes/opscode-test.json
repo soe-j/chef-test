@@ -4,6 +4,6 @@
     "recipe[nginx]"
   ],
   "automatic": {
-    "ipaddress": "chef-test"
+    "ipaddress": "opscode-test"
   }
 }
