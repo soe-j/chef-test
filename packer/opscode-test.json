@@ -20,6 +20,6 @@
   "provisioners": [{
     "type": "chef-solo",
     "cookbook_paths": ["cookbooks", "site-cookbooks"],
-    "run_list": ["yum-epel", "nginx"]
+    "run_list": ["nginx"]
   }]
 }
