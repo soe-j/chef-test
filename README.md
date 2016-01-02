@@ -43,10 +43,3 @@ packer build \
 -var 'aws_secret_key=****************************************' \
 packer/opscode-test.json
 ~~~
-
-## production
-~~~
-(chefdk install)
-berks vendor cookbooks --except development
-...coming soon...
-~~~
